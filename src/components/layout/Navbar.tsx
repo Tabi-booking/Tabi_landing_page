@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 import type { Locale, SiteContent } from '../../i18n/types';
+import { getLocalePath } from '../../i18n';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -45,7 +46,7 @@ export function Navbar({ locale, content }: NavbarProps) {
         aria-label="Main navigation"
       >
         <div className="flex min-w-0 items-center gap-8">
-          <a href={`/${locale}`} className="shrink-0">
+          <a href={getLocalePath(locale)} className="shrink-0">
             <Logo variant={overHero ? 'dark' : 'light'} />
           </a>
           <div className="hidden items-center gap-6 lg:flex">

@@ -6,7 +6,7 @@ Built with **Astro 6**, **React**, **Tailwind CSS v4**, **Framer Motion**, and *
 
 ## Features
 
-- Modular landing sections with ES/EN i18n at `/es` and `/en`
+- Modular landing sections with ES/EN i18n at `/` (ES) and `/en`
 - Tabi brand system (Poppins, coral `#F55E57`, logos)
 - Contact form with Resend (`/api/contact`)
 - Deployed on **Vercel** with `@astrojs/vercel`
@@ -40,7 +40,7 @@ CONTACT_PHONE=+57 300 123 4567
 npm run dev
 ```
 
-Open [http://localhost:4321/es](http://localhost:4321/es) or [http://localhost:4321/en](http://localhost:4321/en).
+Open [http://localhost:4321/](http://localhost:4321/) (ES) or [http://localhost:4321/en](http://localhost:4321/en).
 
 ### Build
 

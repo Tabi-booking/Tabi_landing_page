@@ -13,7 +13,7 @@ export function getAlternateLocale(locale: Locale): Locale {
 }
 
 export function getLocalePath(locale: Locale): string {
-  return `/${locale}`;
+  return locale === defaultLocale ? '/' : `/${locale}`;
 }
 
 export const locales: Locale[] = ['es', 'en'];
