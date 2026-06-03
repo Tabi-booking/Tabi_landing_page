@@ -1,0 +1,52 @@
+import {
+  BarChart3,
+  Bell,
+  Clock,
+  CreditCard,
+  Headphones,
+  Heart,
+  Mail,
+  MessageCircle,
+  Monitor,
+  Phone,
+  Plug,
+  Puzzle,
+  Search,
+  Settings,
+  Shield,
+  Smartphone,
+  Star,
+  TrendingUp,
+  Users,
+  UtensilsCrossed,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
+
+const iconMap: Record<string, LucideIcon> = {
+  Monitor,
+  Smartphone,
+  BarChart3,
+  Puzzle,
+  Zap,
+  Search,
+  CreditCard,
+  Bell,
+  Star,
+  Heart,
+  Clock,
+  UtensilsCrossed,
+  Shield,
+  Settings,
+  Headphones,
+  TrendingUp,
+  MessageCircle,
+  Phone,
+  Mail,
+  Users,
+  Plug,
+};
+
+export function getIcon(name: string): LucideIcon {
+  return iconMap[name] ?? Monitor;
+}

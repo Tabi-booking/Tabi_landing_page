@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "title": "Tabi — Your next table, just one click away",
+    "description": "Booking never tasted this good. Find restaurants in Medellín and confirm your table in seconds."
+  },
+  "nav": {
+    "city": "Medellín",
+    "links": [
+      { "label": "How it works", "href": "#how-it-works" },
+      { "label": "Diners", "href": "#for-clients" },
+      { "label": "Restaurants", "href": "#for-restaurants" },
+      { "label": "Pricing", "href": "#pricing" },
+      { "label": "Demo", "href": "#demo" }
+    ],
+    "ctaClient": "Book",
+    "ctaRestaurant": "I'm a restaurant",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "hero": {
+    "title": "Your next table, just one click away",
+    "subtitle": "Booking never tasted this good.",
+    "pills": ["30 sec", "Secure", "24/7"],
+    "ctaClient": "Book a table",
+    "ctaRestaurant": "I'm a restaurant",
+    "stats": [
+      { "value": "500+", "label": "Restaurants" },
+      { "value": "50k+", "label": "Diners" },
+      { "value": "4.9★", "label": "Rating" }
+    ],
+    "cityTitle": "",
+    "citySubtitle": "",
+    "highlights": [
+      { "title": "Fast", "description": "Table in 30 s", "icon": "Zap" },
+      { "title": "Restaurants", "description": "Pro panel", "icon": "UtensilsCrossed" },
+      { "title": "Web", "description": "No install", "icon": "Monitor" },
+      { "title": "24/7", "description": "Always on", "icon": "Clock" }
+    ]
+  },
+  "howItWorks": {
+    "label": "How it works",
+    "title": "4 steps. Done.",
+    "subtitle": "",
+    "steps": [
+      { "number": "01", "title": "Search", "description": "Find restaurants in Medellín." },
+      { "number": "02", "title": "Pick", "description": "Table, date and time." },
+      { "number": "03", "title": "Confirm", "description": "Details and payment if needed." },
+      { "number": "04", "title": "Enjoy", "description": "WhatsApp confirmation." }
+    ],
+    "ctaPrompt": "",
+    "ctaClient": "Book now",
+    "ctaRestaurant": "I'm a restaurant"
+  },
+  "forClients": {
+    "label": "Diners",
+    "title": "Find and book",
+    "subtitle": "",
+    "features": [
+      { "title": "Search", "description": "By area, cuisine and price.", "icon": "Search" },
+      { "title": "Instant", "description": "Live availability.", "icon": "Zap" },
+      { "title": "Payments", "description": "PSE, Nequi or card.", "icon": "CreditCard" },
+      { "title": "WhatsApp", "description": "Auto reminders.", "icon": "Bell" }
+    ],
+    "appTitle": "Tabi Web",
+    "appRating": "Free · 4.9★",
+    "appPriceLabel": "Free",
+    "appCta": "Try the web",
+    "appStats": [
+      { "value": "10k+", "label": "Bookings" },
+      { "value": "500+", "label": "Venues" }
+    ],
+    "benefitsTitle": "",
+    "benefits": [],
+    "ctaTitle": "",
+    "ctaWeb": "Book",
+    "ctaExplore": "Explore",
+    "footerNote": ""
+  },
+  "forRestaurants": {
+    "label": "Restaurants",
+    "title": "More bookings, fewer no-shows",
+    "subtitle": "",
+    "stats": [
+      { "value": "80%", "label": "Fewer no-shows" },
+      { "value": "60%", "label": "More bookings" },
+      { "value": "24/7", "label": "Online reservations" }
+    ],
+    "tools": [
+      {
+        "badge": "Core",
+        "title": "24/7 bookings",
+        "description": "Get reservations even when you're closed.",
+        "features": ["Automatic", "Never miss a table", "WhatsApp"],
+        "cta": "Free demo",
+        "metrics": [{ "value": "45", "label": "Today" }, { "value": "$2.4M", "label": "Month" }]
+      },
+      {
+        "badge": "Core",
+        "title": "Analytics",
+        "description": "Peak hours, regulars and trends.",
+        "features": ["Real-time", "KPIs", "Reports"],
+        "cta": "Free demo",
+        "metrics": [{ "value": "45", "label": "Today" }, { "value": "$2.4M", "label": "Month" }]
+      },
+      {
+        "badge": "Core",
+        "title": "Payments",
+        "description": "Auto deposits. Fewer no-shows.",
+        "features": ["PSE & Nequi", "Fewer no-shows", "Cash flow"],
+        "cta": "Free demo",
+        "metrics": [{ "value": "45", "label": "Today" }, { "value": "$2.4M", "label": "Month" }]
+      }
+    ],
+    "advantagesTitle": "",
+    "advantages": [],
+    "ctaTitle": "",
+    "ctaDemo": "Request demo",
+    "ctaExpert": "Talk to us",
+    "footerNote": ""
+  },
+  "demo": {
+    "label": "Demo",
+    "title": "Try it on the web",
+    "subtitle": "",
+    "featuresTitle": "",
+    "features": [
+      "Search by area",
+      "Live bookings",
+      "Reviews",
+      "Secure payments",
+      "Favorites",
+      "Reminders"
+    ],
+    "platformsTitle": "",
+    "webLabel": "100% web",
+    "webDesc": "Mobile, tablet or desktop — nothing to install.",
+    "ctaWeb": "Open Tabi",
+    "ctaVideo": "Schedule demo",
+    "stats": [
+      { "value": "4.9★", "label": "Users" },
+      { "value": "50k+", "label": "Active" },
+      { "value": "500+", "label": "Venues" }
+    ]
+  },
+  "testimonials": {
+    "label": "Reviews",
+    "title": "What Medellín says",
+    "subtitle": "",
+    "stats": [],
+    "filters": {
+      "all": "All",
+      "restaurant": "Restaurants",
+      "client": "Diners"
+    },
+    "items": [
+      {
+        "quote": "Bookings +60%, no-shows almost zero.",
+        "initials": "CH",
+        "author": "Carlos H.",
+        "role": "Paisa Gourmet",
+        "location": "El Poblado",
+        "type": "restaurant"
+      },
+      {
+        "quote": "I book in seconds. No calls.",
+        "initials": "MEG",
+        "author": "María Elena G.",
+        "role": "Diner",
+        "location": "Laureles",
+        "type": "client"
+      },
+      {
+        "quote": "Analytics helped us optimize staff.",
+        "initials": "AM",
+        "author": "Andrés M.",
+        "role": "Mondongo's",
+        "location": "Sabaneta",
+        "type": "restaurant"
+      },
+      {
+        "quote": "Found places I didn't know.",
+        "initials": "SR",
+        "author": "Sofia R.",
+        "role": "Diner",
+        "location": "Envigado",
+        "type": "client"
+      }
+    ],
+    "ctaTitle": "",
+    "ctaTrial": "Try free",
+    "ctaAdvisor": "Contact",
+    "footerNote": ""
+  },
+  "pricing": {
+    "label": "Pricing",
+    "title": "Start free",
+    "subtitle": "",
+    "launchOffer": "3 free months on paid plans",
+    "plans": [
+      {
+        "id": "emprendedor",
+        "name": "Starter",
+        "description": "To get going",
+        "price": "Free",
+        "period": "",
+        "features": [
+          "50 bookings/month",
+          "1 user",
+          "WhatsApp",
+          "Basic panel"
+        ],
+        "notIncluded": [],
+        "cta": "Get started"
+      },
+      {
+        "id": "profesional",
+        "name": "Pro",
+        "description": "To grow",
+        "price": "$49.900",
+        "originalPrice": "$79.900",
+        "period": "/mo",
+        "features": [
+          "Unlimited bookings",
+          "3 users",
+          "Analytics",
+          "PSE/Nequi payments",
+          "24/7 support"
+        ],
+        "cta": "3 months free",
+        "highlighted": true,
+        "badge": "Popular",
+        "priceNote": "Cancel anytime"
+      },
+      {
+        "id": "empresarial",
+        "name": "Enterprise",
+        "description": "Chains",
+        "price": "$129.900",
+        "originalPrice": "$199.900",
+        "period": "/mo",
+        "features": [
+          "Everything in Pro",
+          "Multi-location",
+          "API",
+          "Dedicated manager"
+        ],
+        "cta": "3 months free",
+        "priceNote": "Cancel anytime"
+      }
+    ],
+    "helpTitle": "",
+    "recommendations": [],
+    "faqTitle": "",
+    "faqItems": []
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Common questions",
+    "subtitle": "",
+    "categories": [
+      {
+        "id": "general",
+        "label": "General",
+        "items": [
+          {
+            "question": "What is Tabi?",
+            "answer": "Reservation software for Medellín. Your customers book online; you manage everything from a web panel."
+          }
+        ]
+      },
+      {
+        "id": "config",
+        "label": "Setup",
+        "items": [
+          {
+            "question": "How long does setup take?",
+            "answer": "Under 30 minutes. We help you at no cost."
+          }
+        ]
+      },
+      {
+        "id": "payments",
+        "label": "Payments",
+        "items": [
+          {
+            "question": "What payment methods?",
+            "answer": "PSE, Nequi and cards. Deposits reduce no-shows by up to 80%."
+          }
+        ]
+      },
+      {
+        "id": "pricing-cat",
+        "label": "Pricing",
+        "items": [
+          {
+            "question": "Can I try for free?",
+            "answer": "Yes. Starter plan is free forever. Paid plans include a 3-month trial."
+          }
+        ]
+      }
+    ],
+    "supportTitle": "More questions?",
+    "supportChannels": [
+      { "label": "WhatsApp", "description": "Fast", "icon": "MessageCircle" },
+      { "label": "Email", "description": "1 hour", "icon": "Mail" }
+    ],
+    "ctaSupport": "Contact",
+    "ctaDemo": "Demo"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk",
+    "subtitle": "Warm, human, and hassle-free. We reply within 24 hours.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "phonePlaceholder": "+57 300 123 4567",
+    "restaurant": "Restaurant (optional)",
+    "message": "Message",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "success": "Done! We'll be in touch.",
+    "error": "Error. Try again.",
+    "restaurantPlaceholder": "Your restaurant",
+    "messagePlaceholder": "Tell us briefly..."
+  },
+  "finalCta": {
+    "title": "",
+    "subtitle": "",
+    "ctaClient": "",
+    "ctaRestaurant": "",
+    "badges": []
+  },
+  "footer": {
+    "tagline": "Your next table, just one click away.",
+    "address": "El Poblado, Medellín",
+    "phone": "+57 (4) 123-4567",
+    "email": "hola@tabiapp.tech",
+    "product": "Product",
+    "company": "Company",
+    "support": "Support",
+    "legal": "Legal",
+    "productLinks": [
+      { "label": "Diners", "href": "#for-clients" },
+      { "label": "Pricing", "href": "#pricing" },
+      { "label": "Demo", "href": "#demo" }
+    ],
+    "companyLinks": [
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "supportLinks": [
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "legalLinks": [
+      { "label": "Privacy", "href": "#" },
+      { "label": "Terms", "href": "#" }
+    ],
+    "copyright": "© 2026 Tabi Medellín"
+  }
+}

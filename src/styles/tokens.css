@@ -1,0 +1,44 @@
+.gradient-brand {
+  background: linear-gradient(135deg, #f55e57 0%, #e04e48 100%);
+}
+
+.gradient-brand-text {
+  background: linear-gradient(135deg, #f55e57 0%, #e04e48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-orange {
+  background: linear-gradient(to right, #f55e57, #e04e48);
+}
+
+.gradient-footer-bg {
+  background: linear-gradient(to bottom right, #031314 0%, #1b2637 100%);
+}
+
+.gradient-line {
+  height: 3px;
+  width: 3rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #f55e57, #e04e48);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eceae3;
+}
+
+.glass-pill {
+  background: #ffffff;
+  border: 1px solid #eceae3;
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-pulse-glow {
+    animation: none;
+  }
+}

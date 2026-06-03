@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "title": "Tabi — Tu próxima mesa, a solo un clic",
+    "description": "Reservar nunca fue tan delicioso. Encuentra restaurantes en Medellín y confirma tu mesa en segundos."
+  },
+  "nav": {
+    "city": "Medellín",
+    "links": [
+      { "label": "Cómo funciona", "href": "#how-it-works" },
+      { "label": "Comensales", "href": "#for-clients" },
+      { "label": "Restaurantes", "href": "#for-restaurants" },
+      { "label": "Precios", "href": "#pricing" },
+      { "label": "Demo", "href": "#demo" }
+    ],
+    "ctaClient": "Reservar",
+    "ctaRestaurant": "Soy restaurante",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
+  },
+  "hero": {
+    "title": "Tu próxima mesa, a solo un clic",
+    "subtitle": "Reservar nunca fue tan delicioso.",
+    "pills": ["30 seg", "Seguro", "24/7"],
+    "ctaClient": "Reservar mesa",
+    "ctaRestaurant": "Soy restaurante",
+    "stats": [
+      { "value": "500+", "label": "Restaurantes" },
+      { "value": "50k+", "label": "Comensales" },
+      { "value": "4.9★", "label": "Rating" }
+    ],
+    "cityTitle": "",
+    "citySubtitle": "",
+    "highlights": [
+      { "title": "Rápido", "description": "Mesa en 30 s", "icon": "Zap" },
+      { "title": "Restaurantes", "description": "Panel pro", "icon": "UtensilsCrossed" },
+      { "title": "Web", "description": "Sin instalar", "icon": "Monitor" },
+      { "title": "24/7", "description": "Siempre abierto", "icon": "Clock" }
+    ]
+  },
+  "howItWorks": {
+    "label": "Cómo funciona",
+    "title": "4 pasos. Listo.",
+    "subtitle": "",
+    "steps": [
+      { "number": "01", "title": "Busca", "description": "Encuentra restaurantes en Medellín." },
+      { "number": "02", "title": "Elige", "description": "Mesa, fecha y hora." },
+      { "number": "03", "title": "Confirma", "description": "Datos y pago si aplica." },
+      { "number": "04", "title": "Disfruta", "description": "Confirmación por WhatsApp." }
+    ],
+    "ctaPrompt": "",
+    "ctaClient": "Reservar ahora",
+    "ctaRestaurant": "Soy restaurante"
+  },
+  "forClients": {
+    "label": "Comensales",
+    "title": "Encuentra y reserva",
+    "subtitle": "",
+    "features": [
+      { "title": "Búsqueda", "description": "Por zona, cocina y precio.", "icon": "Search" },
+      { "title": "Al instante", "description": "Disponibilidad en vivo.", "icon": "Zap" },
+      { "title": "Pagos", "description": "PSE, Nequi o tarjeta.", "icon": "CreditCard" },
+      { "title": "WhatsApp", "description": "Recordatorios automáticos.", "icon": "Bell" }
+    ],
+    "appTitle": "Tabi Web",
+    "appRating": "Gratis · 4.9★",
+    "appPriceLabel": "Gratis",
+    "appCta": "Probar web",
+    "appStats": [
+      { "value": "10k+", "label": "Reservas" },
+      { "value": "500+", "label": "Locales" }
+    ],
+    "benefitsTitle": "",
+    "benefits": [],
+    "ctaTitle": "",
+    "ctaWeb": "Reservar",
+    "ctaExplore": "Explorar",
+    "footerNote": ""
+  },
+  "forRestaurants": {
+    "label": "Restaurantes",
+    "title": "Más reservas, menos no-shows",
+    "subtitle": "",
+    "stats": [
+      { "value": "80%", "label": "Menos no-shows" },
+      { "value": "60%", "label": "Más reservas" },
+      { "value": "24/7", "label": "Reservas online" }
+    ],
+    "tools": [
+      {
+        "badge": "Core",
+        "title": "Reservas 24/7",
+        "description": "Recibe reservas aunque estés cerrado.",
+        "features": ["Automático", "Sin perder mesas", "WhatsApp"],
+        "cta": "Demo gratis",
+        "metrics": [{ "value": "45", "label": "Hoy" }, { "value": "$2.4M", "label": "Mes" }]
+      },
+      {
+        "badge": "Core",
+        "title": "Analytics",
+        "description": "Horas pico, clientes frecuentes y tendencias.",
+        "features": ["Tiempo real", "KPIs", "Reportes"],
+        "cta": "Demo gratis",
+        "metrics": [{ "value": "45", "label": "Hoy" }, { "value": "$2.4M", "label": "Mes" }]
+      },
+      {
+        "badge": "Core",
+        "title": "Pagos",
+        "description": "Anticipos automáticos. Menos no-shows.",
+        "features": ["PSE & Nequi", "Menos ausencias", "Flujo de caja"],
+        "cta": "Demo gratis",
+        "metrics": [{ "value": "45", "label": "Hoy" }, { "value": "$2.4M", "label": "Mes" }]
+      }
+    ],
+    "advantagesTitle": "",
+    "advantages": [],
+    "ctaTitle": "",
+    "ctaDemo": "Solicitar demo",
+    "ctaExpert": "Hablar con alguien",
+    "footerNote": ""
+  },
+  "demo": {
+    "label": "Demo",
+    "title": "Pruébalo en la web",
+    "subtitle": "",
+    "featuresTitle": "",
+    "features": [
+      "Buscar por zona",
+      "Reservas en vivo",
+      "Reseñas",
+      "Pagos seguros",
+      "Favoritos",
+      "Recordatorios"
+    ],
+    "platformsTitle": "",
+    "webLabel": "100% web",
+    "webDesc": "Móvil, tablet o PC — sin instalar nada.",
+    "ctaWeb": "Abrir Tabi",
+    "ctaVideo": "Agendar demo",
+    "stats": [
+      { "value": "4.9★", "label": "Usuarios" },
+      { "value": "50k+", "label": "Activos" },
+      { "value": "500+", "label": "Locales" }
+    ]
+  },
+  "testimonials": {
+    "label": "Opiniones",
+    "title": "Lo que dicen en Medellín",
+    "subtitle": "",
+    "stats": [],
+    "filters": {
+      "all": "Todos",
+      "restaurant": "Restaurantes",
+      "client": "Comensales"
+    },
+    "items": [
+      {
+        "quote": "Reservas +60%, no-shows casi cero.",
+        "initials": "CH",
+        "author": "Carlos H.",
+        "role": "Paisa Gourmet",
+        "location": "El Poblado",
+        "type": "restaurant"
+      },
+      {
+        "quote": "Reservo en segundos. Sin llamar.",
+        "initials": "MEG",
+        "author": "María Elena G.",
+        "role": "Comensal",
+        "location": "Laureles",
+        "type": "client"
+      },
+      {
+        "quote": "Analytics nos ayudó a optimizar personal.",
+        "initials": "AM",
+        "author": "Andrés M.",
+        "role": "Mondongo's",
+        "location": "Sabaneta",
+        "type": "restaurant"
+      },
+      {
+        "quote": "Descubrí lugares que no conocía.",
+        "initials": "SR",
+        "author": "Sofia R.",
+        "role": "Comensal",
+        "location": "Envigado",
+        "type": "client"
+      }
+    ],
+    "ctaTitle": "",
+    "ctaTrial": "Probar gratis",
+    "ctaAdvisor": "Contactar",
+    "footerNote": ""
+  },
+  "pricing": {
+    "label": "Precios",
+    "title": "Empieza gratis",
+    "subtitle": "",
+    "launchOffer": "3 meses gratis en planes pagos",
+    "plans": [
+      {
+        "id": "emprendedor",
+        "name": "Emprendedor",
+        "description": "Para empezar",
+        "price": "Gratis",
+        "period": "",
+        "features": [
+          "50 reservas/mes",
+          "1 usuario",
+          "WhatsApp",
+          "Panel básico"
+        ],
+        "notIncluded": [],
+        "cta": "Empezar"
+      },
+      {
+        "id": "profesional",
+        "name": "Profesional",
+        "description": "Para crecer",
+        "price": "$49.900",
+        "originalPrice": "$79.900",
+        "period": "/mes",
+        "features": [
+          "Reservas ilimitadas",
+          "3 usuarios",
+          "Analytics",
+          "Pagos PSE/Nequi",
+          "Soporte 24/7"
+        ],
+        "cta": "3 meses gratis",
+        "highlighted": true,
+        "badge": "Popular",
+        "priceNote": "Cancela cuando quieras"
+      },
+      {
+        "id": "empresarial",
+        "name": "Empresarial",
+        "description": "Cadenas",
+        "price": "$129.900",
+        "originalPrice": "$199.900",
+        "period": "/mes",
+        "features": [
+          "Todo Profesional",
+          "Multi-sede",
+          "API",
+          "Manager dedicado"
+        ],
+        "cta": "3 meses gratis",
+        "priceNote": "Cancela cuando quieras"
+      }
+    ],
+    "helpTitle": "",
+    "recommendations": [],
+    "faqTitle": "",
+    "faqItems": []
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Preguntas frecuentes",
+    "subtitle": "",
+    "categories": [
+      {
+        "id": "general",
+        "label": "General",
+        "items": [
+          {
+            "question": "¿Qué es Tabi?",
+            "answer": "Software de reservas para Medellín. Tus clientes reservan online; tú gestionas todo desde un panel web."
+          }
+        ]
+      },
+      {
+        "id": "config",
+        "label": "Setup",
+        "items": [
+          {
+            "question": "¿Cuánto tarda la configuración?",
+            "answer": "Menos de 30 minutos. Te acompañamos sin costo."
+          }
+        ]
+      },
+      {
+        "id": "payments",
+        "label": "Pagos",
+        "items": [
+          {
+            "question": "¿Qué métodos aceptan?",
+            "answer": "PSE, Nequi y tarjetas. Los anticipos reducen no-shows hasta 80%."
+          }
+        ]
+      },
+      {
+        "id": "pricing-cat",
+        "label": "Precios",
+        "items": [
+          {
+            "question": "¿Puedo probar gratis?",
+            "answer": "Sí. Plan Emprendedor gratis para siempre. Planes pagos: 3 meses de prueba."
+          }
+        ]
+      }
+    ],
+    "supportTitle": "¿Más dudas?",
+    "supportChannels": [
+      { "label": "WhatsApp", "description": "Rápido", "icon": "MessageCircle" },
+      { "label": "Email", "description": "1 hora", "icon": "Mail" }
+    ],
+    "ctaSupport": "Contactar",
+    "ctaDemo": "Demo"
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Hablemos",
+    "subtitle": "Cercanos, humanos y sin complicaciones. Te respondemos en 24 h.",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono (opcional)",
+    "phonePlaceholder": "+57 300 123 4567",
+    "restaurant": "Restaurante (opcional)",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "success": "¡Listo! Te escribimos pronto.",
+    "error": "Error. Intenta de nuevo.",
+    "restaurantPlaceholder": "Tu restaurante",
+    "messagePlaceholder": "Cuéntanos brevemente..."
+  },
+  "finalCta": {
+    "title": "",
+    "subtitle": "",
+    "ctaClient": "",
+    "ctaRestaurant": "",
+    "badges": []
+  },
+  "footer": {
+    "tagline": "Tu próxima mesa, a solo un clic.",
+    "address": "El Poblado, Medellín",
+    "phone": "+57 (4) 123-4567",
+    "email": "hola@tabiapp.tech",
+    "product": "Producto",
+    "company": "Empresa",
+    "support": "Soporte",
+    "legal": "Legal",
+    "productLinks": [
+      { "label": "Comensales", "href": "#for-clients" },
+      { "label": "Precios", "href": "#pricing" },
+      { "label": "Demo", "href": "#demo" }
+    ],
+    "companyLinks": [
+      { "label": "Contacto", "href": "#contact" }
+    ],
+    "supportLinks": [
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "legalLinks": [
+      { "label": "Privacidad", "href": "#" },
+      { "label": "Términos", "href": "#" }
+    ],
+    "copyright": "© 2026 Tabi Medellín"
+  }
+}

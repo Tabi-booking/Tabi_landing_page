@@ -1,0 +1,61 @@
+---
+import type { SiteContent } from '../i18n/types';
+
+interface Props {
+  content: SiteContent['footer'];
+}
+
+const { content } = Astro.props;
+
+const phone = import.meta.env.CONTACT_PHONE ?? content.phone;
+const telHref = phone.replace(/[^\d+]/g, '');
+
+const navLinks = [
+  ...content.productLinks,
+  ...content.supportLinks,
+  ...content.companyLinks,
+];
+---
+
+<footer class="gradient-footer-bg text-white">
+  <div class="mx-auto max-w-[var(--spacing-container-max)] px-5 py-10 sm:px-6">
+    <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      <div class="max-w-xs">
+        <img
+          src="/images/logo/tabi-imagotipo-dark.png"
+          alt="Tabi"
+          class="mb-3 h-8 w-auto"
+          width="120"
+          height="32"
+        />
+        <p class="mb-4 text-sm leading-relaxed text-white/70">{content.tagline}</p>
+        <div class="space-y-1 text-sm text-white/60">
+          <p>{content.address}</p>
+          <p>
+            <a href={`mailto:${content.email}`} class="transition-colors hover:text-coral">{content.email}</a>
+          </p>
+          <p>
+            <a href={`tel:${telHref}`} class="transition-colors hover:text-coral">{phone}</a>
+          </p>
+        </div>
+      </div>
+
+      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+        {navLinks.map((link) => (
+          <a href={link.href} class="text-sm text-white/60 transition-colors hover:text-coral">
+            {link.label}
+          </a>
+        ))}
+        {content.legalLinks.map((link) => (
+          <a href={link.href} class="text-sm text-white/50 transition-colors hover:text-coral">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <div class="mt-8 border-t border-white/10 pt-6 text-center text-xs text-white/40 md:text-left">
+      {content.copyright}
+    </div>
+  </div>
+</footer>

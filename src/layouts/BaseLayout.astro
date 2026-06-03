@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import type { Locale, SiteContent } from '../i18n/types';
+import { Navbar } from '../components/layout/Navbar';
+import { ScrollProgress } from '../components/layout/ScrollProgress';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+}
+
+const { locale, content } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={content.meta.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/logo/tabi-isotipo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{content.meta.title}</title>
+  </head>
+  <body>
+    <ScrollProgress client:load />
+    <Navbar client:load locale={locale} content={content.nav} />
+    <main>
+      <slot />
+    </main>
+    <Footer content={content.footer} />
+  </body>
+</html>

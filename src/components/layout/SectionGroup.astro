@@ -1,0 +1,17 @@
+---
+interface Props {
+  tone?: 'white' | 'muted';
+  divider?: boolean;
+}
+
+const { tone = 'white', divider = true } = Astro.props;
+---
+
+<div
+  class:list={[
+    divider && 'border-t border-gray-100',
+    tone === 'muted' && 'section-muted section-muted-glow',
+  ]}
+>
+  <slot />
+</div>
