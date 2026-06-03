@@ -1,23 +1,22 @@
 # Tabi Landing Page
 
-Premium SaaS landing page for Tabi — a digital reservation ecosystem for restaurants in LATAM.
+Premium SaaS landing page for Tabi — restaurant reservations in LATAM.
 
-Built with **Astro**, **React**, **Tailwind CSS**, **Framer Motion**, and **Resend** for contact form emails.
+Built with **Astro 6**, **React**, **Tailwind CSS v4**, **Framer Motion**, and **Resend** for contact form emails.
 
 ## Features
 
-- 12 modular sections (Hero, Trust, Problem, Ecosystem, Features, How It Works, Product Showcase, Metrics, Pricing, FAQ, Contact Form, Final CTA)
-- Bilingual support (ES/EN) at `/es` and `/en`
-- Design system from Tabi brand tokens (emerald green, Plus Jakarta Sans, Inter)
-- Contact form with Resend email delivery
-- Responsive, accessible, with reduced-motion support
+- Modular landing sections with ES/EN i18n at `/es` and `/en`
+- Tabi brand system (Poppins, coral `#F55E57`, logos)
+- Contact form with Resend (`/api/contact`)
+- Deployed on **Vercel** with `@astrojs/vercel`
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js >= 22.12
-- A [Resend](https://resend.com) account and API key
+- A [Resend](https://resend.com) account with domain `tabiapp.tech` verified
 
 ### Setup
 
@@ -26,15 +25,14 @@ npm install
 cp .env.example .env
 ```
 
-Edit `.env` with your values:
+Edit `.env`:
 
 ```
 RESEND_API_KEY=re_xxxx
 CONTACT_EMAIL=your@email.com
 RESEND_FROM_EMAIL=Tabi <hola@tabiapp.tech>
+CONTACT_PHONE=+57 300 123 4567
 ```
-
-With the verified domain `tabiapp.tech`, form emails are sent **from** `hola@tabiapp.tech` and delivered **to** `CONTACT_EMAIL` (any address you choose).
 
 ### Development
 
@@ -48,45 +46,69 @@ Open [http://localhost:4321/es](http://localhost:4321/es) or [http://localhost:4
 
 ```bash
 npm run build
-npm run preview
+```
+
+## Deploy on Vercel
+
+### 1. Import the repository
+
+1. Go to [vercel.com/new](https://vercel.com/new)
+2. Import `Tabi-booking/Tabi_landing_page` from GitHub
+3. Vercel auto-detects **Astro** — no extra build settings needed
+
+### 2. Environment variables
+
+In **Project Settings → Environment Variables**, add:
+
+| Variable | Example | Required |
+|----------|---------|----------|
+| `RESEND_API_KEY` | `re_...` | Yes |
+| `CONTACT_EMAIL` | `tu@gmail.com` | Yes |
+| `RESEND_FROM_EMAIL` | `Tabi <hola@tabiapp.tech>` | Yes |
+| `CONTACT_PHONE` | `+57 300 123 4567` | No |
+
+Apply to **Production** (and **Preview** if you want the contact form in PR previews).
+
+### 3. Custom domain
+
+1. **Project Settings → Domains**
+2. Add `tabiapp.tech` (and `www.tabiapp.tech` if needed)
+3. Configure DNS at your registrar using the records Vercel provides
+
+### 4. Deploy
+
+Push to `main` — Vercel deploys automatically.
+
+```bash
+git push origin main
+```
+
+### CLI (optional)
+
+```bash
+npm i -g vercel
+vercel login
+vercel link
+vercel env pull .env.local   # sync env vars locally
+vercel --prod
 ```
 
 ## Project Structure
 
 ```
 src/
-├── components/
-│   ├── layout/       # Navbar, Footer, SectionContainer
-│   ├── mockups/      # CSS/SVG product mockups
-│   ├── sections/     # One component per landing section
-│   └── ui/           # Button, Card, Badge, SectionHeader
-├── data/content/     # es.json, en.json (all copy)
-├── i18n/             # Locale utilities
-├── layouts/          # BaseLayout.astro
+├── components/       # layout, sections, ui, mockups
+├── data/content/     # es.json, en.json
 ├── pages/
 │   ├── es/index.astro
 │   ├── en/index.astro
-│   └── api/contact.ts
-└── styles/           # global.css, tokens.css
+│   └── api/contact.ts   # serverless on Vercel
+└── styles/
 ```
 
 ## Contact Form
 
-The form at `#contact` sends a POST to `/api/contact`, which validates input with Zod and sends an email via Resend to `CONTACT_EMAIL`.
-
-Includes honeypot field and basic rate limiting (5 requests/minute per IP).
-
-## Deploy
-
-For production with the contact API, deploy to a platform that supports Astro server mode (this project uses `@astrojs/node`):
-
-- **Node.js server** — run `node ./dist/server/entry.mjs` after build
-- [Vercel](https://vercel.com) — swap adapter to `@astrojs/vercel`
-- [Netlify](https://netlify.com) — swap adapter to `@astrojs/netlify`
-
-Set environment variables in your hosting dashboard (`RESEND_API_KEY`, `CONTACT_EMAIL`, `RESEND_FROM_EMAIL=Tabi <hola@tabiapp.tech>`, `CONTACT_PHONE`).
-
-Domain `tabiapp.tech` is verified in Resend — no sandbox limits; `replyTo` uses the visitor's email automatically.
+POST `/api/contact` — Zod validation, honeypot, rate limit (5 req/min per IP), Resend email to `CONTACT_EMAIL` with `replyTo` from the visitor.
 
 ## License
 
