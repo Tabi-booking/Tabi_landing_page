@@ -1,0 +1,197 @@
+---
+import { blogPosts, formatDate } from '../../data/blog';
+import { getContent } from '../../i18n';
+
+const content = getContent('es');
+const footer = content.footer;
+const phone = import.meta.env.CONTACT_PHONE ?? footer.phone;
+const telHref = phone.replace(/[^\d+]/g, '');
+
+const categoryColors: Record<string, string> = {
+  'Operaciones': 'bg-coral/10 text-coral',
+  'Gestión': 'bg-blue/10 text-blue',
+  'Crecimiento': 'bg-green/10 text-green-700',
+  'Tecnología': 'bg-purple/10 text-purple-700',
+  'Experiencia de cliente': 'bg-yellow/10 text-yellow-700',
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Blog de Tabi: recursos prácticos sobre gestión de reservas, analítica, digitalización y experiencia del cliente para dueños de restaurantes."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Blog | Tabi — Recursos para restaurantes</title>
+    <style>
+      @import url('../../styles/global.css');
+    </style>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif; background: #fff; color: #1b2637; overflow-x: hidden; -webkit-font-smoothing: antialiased;">
+
+    <!-- Navbar -->
+    <header style="position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e8e6df; box-shadow: 0 1px 8px rgba(3,19,20,0.04);">
+      <nav style="max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+          <img src="/images/logo/tabi-isotipo.png" alt="Tabi" style="height: 32px; width: auto;" />
+        </a>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <a href="/#how-it-works" style="text-decoration: none; color: #374151; font-size: 14px; font-weight: 500;">Cómo funciona</a>
+          <a href="/#pricing" style="text-decoration: none; color: #374151; font-size: 14px; font-weight: 500;">Precios</a>
+          <a href="/blog" style="text-decoration: none; color: #f55e57; font-size: 14px; font-weight: 600;">Blog</a>
+          <a href="/#contact" style="text-decoration: none; background: #f55e57; color: #fff; padding: 8px 18px; border-radius: 10px; font-size: 14px; font-weight: 600;">
+            Demo gratis
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section style="background: linear-gradient(135deg, #fff5f4 0%, #fcfbf2 60%, #fff 100%); padding: 72px 24px 56px;">
+      <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <span style="display: inline-block; background: #f55e57; color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px;">
+          Blog Tabi
+        </span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: #1b2637; margin: 0 0 16px; line-height: 1.15;">
+          Recursos para gestionar mejor<br />tu restaurante
+        </h1>
+        <p style="font-size: 18px; color: #6b7280; max-width: 580px; margin: 0 auto; line-height: 1.6;">
+          Artículos prácticos sobre reservas, analítica, digitalización y experiencia del cliente.
+          Sin teoría vacía — solo lo que funciona en operación real.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog grid -->
+    <main style="max-width: 1100px; margin: 0 auto; padding: 56px 24px 80px;">
+
+      <!-- Featured post -->
+      {blogPosts.length > 0 && (
+        <a
+          href={`/blog/${blogPosts[0].slug}`}
+          style="display: block; text-decoration: none; background: #fff; border: 1px solid #e8e6df; border-radius: 20px; overflow: hidden; margin-bottom: 48px; box-shadow: 0 4px 24px rgba(3,19,20,0.06); transition: box-shadow 0.2s, transform 0.2s;"
+          onmouseover="this.style.boxShadow='0 8px 32px rgba(3,19,20,0.10)'; this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.boxShadow='0 4px 24px rgba(3,19,20,0.06)'; this.style.transform='translateY(0)'"
+        >
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+            <!-- Colored panel -->
+            <div style="background: linear-gradient(135deg, #f55e57 0%, #e04e48 100%); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center;">
+              <span style="display: inline-block; background: rgba(255,255,255,0.2); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; width: fit-content;">
+                Destacado
+              </span>
+              <h2 style="font-size: 24px; font-weight: 700; color: #fff; margin: 0 0 16px; line-height: 1.3;">
+                {blogPosts[0].title}
+              </h2>
+              <p style="font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0 0 24px;">
+                {blogPosts[0].excerpt}
+              </p>
+              <span style="display: inline-flex; align-items: center; gap: 6px; color: #fff; font-size: 14px; font-weight: 600;">
+                Leer artículo →
+              </span>
+            </div>
+            <!-- Info panel -->
+            <div style="padding: 48px 40px; display: flex; flex-direction: column; justify-content: center;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style={`font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; ${categoryColors[blogPosts[0].category] ? '' : 'background:#f3f4f6; color:#374151;'}`}
+                  class={categoryColors[blogPosts[0].category] ?? ''}>
+                  {blogPosts[0].category}
+                </span>
+                <span style="font-size: 13px; color: #9ca3af;">{formatDate(blogPosts[0].publishedAt)}</span>
+                <span style="font-size: 13px; color: #9ca3af;">{blogPosts[0].readingTime} min de lectura</span>
+              </div>
+              <p style="font-size: 15px; color: #374151; line-height: 1.7; margin: 0;">
+                {blogPosts[0].excerpt}
+              </p>
+            </div>
+          </div>
+        </a>
+      )}
+
+      <!-- Grid of remaining posts -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;">
+        {blogPosts.slice(1).map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            style="display: flex; flex-direction: column; text-decoration: none; background: #fff; border: 1px solid #e8e6df; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(3,19,20,0.04); transition: box-shadow 0.2s, transform 0.2s;"
+            onmouseover="this.style.boxShadow='0 8px 28px rgba(3,19,20,0.09)'; this.style.transform='translateY(-3px)'"
+            onmouseout="this.style.boxShadow='0 2px 12px rgba(3,19,20,0.04)'; this.style.transform='translateY(0)'"
+          >
+            <!-- Top accent -->
+            <div style="height: 4px; background: linear-gradient(90deg, #f55e57, #e04e48);"></div>
+            <div style="padding: 28px; flex: 1; display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+                <span style="font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: #fff5f4; color: #f55e57;">
+                  {post.category}
+                </span>
+                <span style="font-size: 12px; color: #9ca3af;">{post.readingTime} min</span>
+              </div>
+              <h3 style="font-size: 17px; font-weight: 700; color: #1b2637; margin: 0 0 12px; line-height: 1.35; flex: 1;">
+                {post.title}
+              </h3>
+              <p style="font-size: 14px; color: #6b7280; line-height: 1.6; margin: 0 0 20px;">
+                {post.excerpt}
+              </p>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 12px; color: #9ca3af;">{formatDate(post.publishedAt)}</span>
+                <span style="font-size: 13px; color: #f55e57; font-weight: 600;">Leer →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <!-- CTA Banner -->
+    <section style="background: linear-gradient(135deg, #1b2637 0%, #141c29 100%); padding: 64px 24px;">
+      <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 28px; font-weight: 700; color: #fff; margin: 0 0 16px;">
+          ¿Listo para digitalizar tu restaurante?
+        </h2>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.7); margin: 0 0 32px; line-height: 1.6;">
+          Tabi te ayuda a gestionar reservas, reducir el no-show y conocer mejor a tus clientes.<br />
+          Demo gratuita, sin compromisos.
+        </p>
+        <a
+          href="/#contact"
+          style="display: inline-block; background: #f55e57; color: #fff; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none;"
+        >
+          Solicitar demo gratis
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1b2637; color: #fff; padding: 40px 24px 24px;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; margin-bottom: 32px;">
+          <div>
+            <img src="/images/logo/tabi-imagotipo-dark.png" alt="Tabi" style="height: 28px; width: auto; margin-bottom: 12px;" />
+            <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin: 0;">{footer.tagline}</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start;">
+            <a href="/#how-it-works" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Cómo funciona</a>
+            <a href="/#pricing" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Precios</a>
+            <a href="/blog" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Blog</a>
+            <a href="/#contact" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Contacto</a>
+            <a href={`mailto:${footer.email}`} style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">{footer.email}</a>
+          </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 12px; color: rgba(255,255,255,0.35); text-align: center;">
+          {footer.copyright}
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

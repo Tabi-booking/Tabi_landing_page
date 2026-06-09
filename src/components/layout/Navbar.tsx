@@ -16,9 +16,19 @@ interface NavbarProps {
 export function Navbar({ locale, content }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const isHome = currentPath === '/' || currentPath === '/es' || currentPath === '/en' || currentPath === '/es/' || currentPath === '/en/';
+
+  const resolveHref = (href: string) => {
+    if (href.startsWith('#') && !isHome) return `/${href}`;
+    return href;
+  };
 
   const sectionIds = useMemo(
-    () => content.links.map((link) => link.href.replace('#', '')),
+    () =>
+      content.links
+        .filter((link) => link.href.startsWith('#'))
+        .map((link) => link.href.replace('#', '')),
     [content.links],
   );
   const activeHref = useActiveSection(sectionIds);
@@ -51,11 +61,13 @@ export function Navbar({ locale, content }: NavbarProps) {
           </a>
           <div className="hidden items-center gap-6 lg:flex">
             {content.links.map((link) => {
-              const isActive = activeHref === link.href;
+              const isActive = link.href.startsWith('#')
+                ? activeHref === link.href
+                : currentPath.startsWith(link.href);
               return (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                 className={cn(
                   'relative text-sm font-medium transition-colors hover:text-orange',
                   overHero ? 'text-white/85' : 'text-gray-600',
@@ -75,14 +87,14 @@ export function Navbar({ locale, content }: NavbarProps) {
         <div className="flex shrink-0 items-center gap-2">
           <LanguageSwitcher locale={locale} overHero={overHero} />
           <Button
-            href="#contact"
+            href={resolveHref('#contact')}
             variant="ghost"
             size="sm"
             className={cn('hidden md:inline-flex', overHero && 'text-white/90 hover:bg-white/10')}
           >
             {content.ctaRestaurant}
           </Button>
-          <Button href="#for-clients" variant="gradient" size="sm" className="hidden md:inline-flex">
+          <Button href={resolveHref('#for-clients')} variant="gradient" size="sm" className="hidden md:inline-flex">
             {content.ctaClient}
           </Button>
           <button
@@ -104,11 +116,13 @@ export function Navbar({ locale, content }: NavbarProps) {
         <div className="border-t border-gray-100 bg-white lg:hidden">
           <div className="flex flex-col gap-1 px-5 py-4">
             {content.links.map((link) => {
-              const isActive = activeHref === link.href;
+              const isActive = link.href.startsWith('#')
+                ? activeHref === link.href
+                : currentPath.startsWith(link.href);
               return (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   className={cn(
                     'rounded-xl px-3 py-2.5 text-sm font-medium hover:bg-orange/5 hover:text-orange',
                     isActive ? 'bg-orange/5 text-orange' : 'text-gray-600',
@@ -120,10 +134,10 @@ export function Navbar({ locale, content }: NavbarProps) {
               );
             })}
             <div className="mt-3 flex flex-col gap-2 border-t border-gray-100 pt-3">
-              <Button href="#contact" variant="blue-outline" className="w-full">
+              <Button href={resolveHref('#contact')} variant="blue-outline" className="w-full">
                 {content.ctaRestaurant}
               </Button>
-              <Button href="#for-clients" variant="gradient" className="w-full">
+              <Button href={resolveHref('#for-clients')} variant="gradient" className="w-full">
                 {content.ctaClient}
               </Button>
             </div>

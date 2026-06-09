@@ -10,11 +10,15 @@ const { content } = Astro.props;
 const phone = import.meta.env.CONTACT_PHONE ?? content.phone;
 const telHref = phone.replace(/[^\d+]/g, '');
 
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/' || currentPath === '/es' || currentPath === '/en' || currentPath === '/es/' || currentPath === '/en/';
+const resolveHref = (href: string) => (href.startsWith('#') && !isHome ? `/${href}` : href);
+
 const navLinks = [
   ...content.productLinks,
   ...content.supportLinks,
   ...content.companyLinks,
-];
+].map((link) => ({ ...link, href: resolveHref(link.href) }));
 ---
 
 <footer class="gradient-footer-bg text-white">

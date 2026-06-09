@@ -6,11 +6,30 @@
   "nav": {
     "city": "Medellín",
     "links": [
-      { "label": "How it works", "href": "#how-it-works" },
-      { "label": "Diners", "href": "#for-clients" },
-      { "label": "Restaurants", "href": "#for-restaurants" },
-      { "label": "Pricing", "href": "#pricing" },
-      { "label": "Demo", "href": "#demo" }
+      {
+        "label": "How it works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Diners",
+        "href": "#for-clients"
+      },
+      {
+        "label": "Restaurants",
+        "href": "#for-restaurants"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "Demo",
+        "href": "#demo"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      }
     ],
     "ctaClient": "Book",
     "ctaRestaurant": "I'm a restaurant",
@@ -20,21 +39,50 @@
   "hero": {
     "title": "Your next table, just one click away",
     "subtitle": "Booking never tasted this good.",
-    "pills": ["30 sec", "Secure", "24/7"],
+    "pills": [
+      "30 sec",
+      "Secure",
+      "24/7"
+    ],
     "ctaClient": "Book a table",
     "ctaRestaurant": "I'm a restaurant",
     "stats": [
-      { "value": "500+", "label": "Restaurants" },
-      { "value": "50k+", "label": "Diners" },
-      { "value": "4.9★", "label": "Rating" }
+      {
+        "value": "500+",
+        "label": "Restaurants"
+      },
+      {
+        "value": "50k+",
+        "label": "Diners"
+      },
+      {
+        "value": "4.9★",
+        "label": "Rating"
+      }
     ],
     "cityTitle": "",
     "citySubtitle": "",
     "highlights": [
-      { "title": "Fast", "description": "Table in 30 s", "icon": "Zap" },
-      { "title": "Restaurants", "description": "Pro panel", "icon": "UtensilsCrossed" },
-      { "title": "Web", "description": "No install", "icon": "Monitor" },
-      { "title": "24/7", "description": "Always on", "icon": "Clock" }
+      {
+        "title": "Fast",
+        "description": "Table in 30 s",
+        "icon": "Zap"
+      },
+      {
+        "title": "Restaurants",
+        "description": "Pro panel",
+        "icon": "UtensilsCrossed"
+      },
+      {
+        "title": "Web",
+        "description": "No install",
+        "icon": "Monitor"
+      },
+      {
+        "title": "24/7",
+        "description": "Always on",
+        "icon": "Clock"
+      }
     ]
   },
   "howItWorks": {
@@ -42,10 +90,26 @@
     "title": "4 steps. Done.",
     "subtitle": "",
     "steps": [
-      { "number": "01", "title": "Search", "description": "Find restaurants in Medellín." },
-      { "number": "02", "title": "Pick", "description": "Table, date and time." },
-      { "number": "03", "title": "Confirm", "description": "Details and payment if needed." },
-      { "number": "04", "title": "Enjoy", "description": "WhatsApp confirmation." }
+      {
+        "number": "01",
+        "title": "Search",
+        "description": "Find restaurants in Medellín."
+      },
+      {
+        "number": "02",
+        "title": "Pick",
+        "description": "Table, date and time."
+      },
+      {
+        "number": "03",
+        "title": "Confirm",
+        "description": "Details and payment if needed."
+      },
+      {
+        "number": "04",
+        "title": "Enjoy",
+        "description": "WhatsApp confirmation."
+      }
     ],
     "ctaPrompt": "",
     "ctaClient": "Book now",
@@ -56,18 +120,40 @@
     "title": "Find and book",
     "subtitle": "",
     "features": [
-      { "title": "Search", "description": "By area, cuisine and price.", "icon": "Search" },
-      { "title": "Instant", "description": "Live availability.", "icon": "Zap" },
-      { "title": "Payments", "description": "PSE, Nequi or card.", "icon": "CreditCard" },
-      { "title": "WhatsApp", "description": "Auto reminders.", "icon": "Bell" }
+      {
+        "title": "Search",
+        "description": "By area, cuisine and price.",
+        "icon": "Search"
+      },
+      {
+        "title": "Instant",
+        "description": "Live availability.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Payments",
+        "description": "PSE, Nequi or card.",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "WhatsApp",
+        "description": "Auto reminders.",
+        "icon": "Bell"
+      }
     ],
     "appTitle": "Tabi Web",
     "appRating": "Free · 4.9★",
     "appPriceLabel": "Free",
     "appCta": "Try the web",
     "appStats": [
-      { "value": "10k+", "label": "Bookings" },
-      { "value": "500+", "label": "Venues" }
+      {
+        "value": "10k+",
+        "label": "Bookings"
+      },
+      {
+        "value": "500+",
+        "label": "Venues"
+      }
     ],
     "benefitsTitle": "",
     "benefits": [],
@@ -81,34 +167,82 @@
     "title": "More bookings, fewer no-shows",
     "subtitle": "",
     "stats": [
-      { "value": "80%", "label": "Fewer no-shows" },
-      { "value": "60%", "label": "More bookings" },
-      { "value": "24/7", "label": "Online reservations" }
+      {
+        "value": "80%",
+        "label": "Fewer no-shows"
+      },
+      {
+        "value": "60%",
+        "label": "More bookings"
+      },
+      {
+        "value": "24/7",
+        "label": "Online reservations"
+      }
     ],
     "tools": [
       {
         "badge": "Core",
         "title": "24/7 bookings",
         "description": "Get reservations even when you're closed.",
-        "features": ["Automatic", "Never miss a table", "WhatsApp"],
+        "features": [
+          "Automatic",
+          "Never miss a table",
+          "WhatsApp"
+        ],
         "cta": "Free demo",
-        "metrics": [{ "value": "45", "label": "Today" }, { "value": "$2.4M", "label": "Month" }]
+        "metrics": [
+          {
+            "value": "45",
+            "label": "Today"
+          },
+          {
+            "value": "$2.4M",
+            "label": "Month"
+          }
+        ]
       },
       {
         "badge": "Core",
         "title": "Analytics",
         "description": "Peak hours, regulars and trends.",
-        "features": ["Real-time", "KPIs", "Reports"],
+        "features": [
+          "Real-time",
+          "KPIs",
+          "Reports"
+        ],
         "cta": "Free demo",
-        "metrics": [{ "value": "45", "label": "Today" }, { "value": "$2.4M", "label": "Month" }]
+        "metrics": [
+          {
+            "value": "45",
+            "label": "Today"
+          },
+          {
+            "value": "$2.4M",
+            "label": "Month"
+          }
+        ]
       },
       {
         "badge": "Core",
         "title": "Payments",
         "description": "Auto deposits. Fewer no-shows.",
-        "features": ["PSE & Nequi", "Fewer no-shows", "Cash flow"],
+        "features": [
+          "PSE & Nequi",
+          "Fewer no-shows",
+          "Cash flow"
+        ],
         "cta": "Free demo",
-        "metrics": [{ "value": "45", "label": "Today" }, { "value": "$2.4M", "label": "Month" }]
+        "metrics": [
+          {
+            "value": "45",
+            "label": "Today"
+          },
+          {
+            "value": "$2.4M",
+            "label": "Month"
+          }
+        ]
       }
     ],
     "advantagesTitle": "",
@@ -137,9 +271,18 @@
     "ctaWeb": "Open Tabi",
     "ctaVideo": "Schedule demo",
     "stats": [
-      { "value": "4.9★", "label": "Users" },
-      { "value": "50k+", "label": "Active" },
-      { "value": "500+", "label": "Venues" }
+      {
+        "value": "4.9★",
+        "label": "Users"
+      },
+      {
+        "value": "50k+",
+        "label": "Active"
+      },
+      {
+        "value": "500+",
+        "label": "Venues"
+      }
     ]
   },
   "testimonials": {
@@ -301,8 +444,16 @@
     ],
     "supportTitle": "More questions?",
     "supportChannels": [
-      { "label": "WhatsApp", "description": "Fast", "icon": "MessageCircle" },
-      { "label": "Email", "description": "1 hour", "icon": "Mail" }
+      {
+        "label": "WhatsApp",
+        "description": "Fast",
+        "icon": "MessageCircle"
+      },
+      {
+        "label": "Email",
+        "description": "1 hour",
+        "icon": "Mail"
+      }
     ],
     "ctaSupport": "Contact",
     "ctaDemo": "Demo"
@@ -341,19 +492,44 @@
     "support": "Support",
     "legal": "Legal",
     "productLinks": [
-      { "label": "Diners", "href": "#for-clients" },
-      { "label": "Pricing", "href": "#pricing" },
-      { "label": "Demo", "href": "#demo" }
+      {
+        "label": "Diners",
+        "href": "#for-clients"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "Demo",
+        "href": "#demo"
+      }
     ],
     "companyLinks": [
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Contact",
+        "href": "#contact"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      }
     ],
     "supportLinks": [
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "legalLinks": [
-      { "label": "Privacy", "href": "#" },
-      { "label": "Terms", "href": "#" }
+      {
+        "label": "Privacy",
+        "href": "#"
+      },
+      {
+        "label": "Terms",
+        "href": "#"
+      }
     ],
     "copyright": "© 2026 Tabi Medellín"
   }

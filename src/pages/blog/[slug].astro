@@ -1,0 +1,274 @@
+---
+import { blogPosts, getBlogPost, formatDate } from '../../data/blog';
+import { getContent } from '../../i18n';
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = getBlogPost(slug!);
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const content = getContent('es');
+const footer = content.footer;
+
+// Parse markdown-ish content to HTML (basic transforms)
+function parseContent(text: string): string {
+  let html = text.trim();
+
+  // Tables
+  html = html.replace(/\|(.+)\|\n\|[-| ]+\|\n((?:\|.+\|\n?)+)/g, (_, header, rows) => {
+    const ths = header
+      .split('|')
+      .filter(Boolean)
+      .map((h: string) => `<th style="padding:10px 16px; text-align:left; font-weight:600; color:#1b2637; border-bottom:2px solid #e8e6df; white-space:nowrap;">${h.trim()}</th>`)
+      .join('');
+    const trs = rows
+      .trim()
+      .split('\n')
+      .map((row: string) => {
+        const tds = row
+          .split('|')
+          .filter(Boolean)
+          .map((d: string) => `<td style="padding:10px 16px; border-bottom:1px solid #f3f4f6; color:#374151; font-size:14px;">${d.trim()}</td>`)
+          .join('');
+        return `<tr>${tds}</tr>`;
+      })
+      .join('');
+    return `<div style="overflow-x:auto; margin:24px 0;"><table style="width:100%; border-collapse:collapse; background:#fff; border:1px solid #e8e6df; border-radius:12px; overflow:hidden;"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
+  });
+
+  // Blockquote
+  html = html.replace(/^> (.+)$/gm, '<blockquote style="border-left:3px solid #f55e57; margin:20px 0; padding:12px 20px; background:#fff5f4; border-radius:0 8px 8px 0; font-style:italic; color:#374151;">$1</blockquote>');
+
+  // H3
+  html = html.replace(/^### (.+)$/gm, '<h3 style="font-size:20px; font-weight:700; color:#1b2637; margin:32px 0 12px;">$1</h3>');
+
+  // H2
+  html = html.replace(/^## (.+)$/gm, '<h2 style="font-size:26px; font-weight:700; color:#1b2637; margin:48px 0 16px; padding-bottom:12px; border-bottom:2px solid #f55e57;">$1</h2>');
+
+  // HR
+  html = html.replace(/^---$/gm, '<hr style="border:none; border-top:1px solid #e8e6df; margin:40px 0;" />');
+
+  // Bold
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong style="font-weight:600; color:#1b2637;">$1</strong>');
+
+  // Unordered lists
+  html = html.replace(/((?:^- .+\n?)+)/gm, (block) => {
+    const items = block
+      .trim()
+      .split('\n')
+      .map((line: string) => `<li style="padding:4px 0; color:#374151;">${line.replace(/^- /, '')}</li>`)
+      .join('');
+    return `<ul style="margin:16px 0; padding-left:24px; list-style:disc;">${items}</ul>`;
+  });
+
+  // Ordered lists
+  html = html.replace(/((?:^\d+\. .+\n?)+)/gm, (block) => {
+    const items = block
+      .trim()
+      .split('\n')
+      .map((line: string) => `<li style="padding:4px 0; color:#374151;">${line.replace(/^\d+\. /, '')}</li>`)
+      .join('');
+    return `<ol style="margin:16px 0; padding-left:24px; list-style:decimal;">${items}</ol>`;
+  });
+
+  // Paragraphs (lines that aren't already tags)
+  html = html
+    .split('\n\n')
+    .map((block) => {
+      block = block.trim();
+      if (!block) return '';
+      if (block.startsWith('<')) return block;
+      return `<p style="margin:0 0 20px; line-height:1.8; color:#374151; font-size:16px;">${block}</p>`;
+    })
+    .join('\n');
+
+  return html;
+}
+
+const postHtml = parseContent(post.content);
+
+const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={post.metaDescription} />
+    <link rel="canonical" href={`https://tabiapp.tech/blog/${post.slug}`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{post.titleTag}</title>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif; background: #fff; color: #1b2637; overflow-x: hidden; -webkit-font-smoothing: antialiased; margin: 0;">
+
+    <!-- Navbar -->
+    <header style="position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e8e6df; box-shadow: 0 1px 8px rgba(3,19,20,0.04);">
+      <nav style="max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+          <img src="/images/logo/tabi-isotipo.png" alt="Tabi" style="height: 32px; width: auto;" />
+        </a>
+        <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+          <a href="/#how-it-works" style="text-decoration: none; color: #374151; font-size: 14px; font-weight: 500;">Cómo funciona</a>
+          <a href="/#pricing" style="text-decoration: none; color: #374151; font-size: 14px; font-weight: 500;">Precios</a>
+          <a href="/blog" style="text-decoration: none; color: #f55e57; font-size: 14px; font-weight: 600;">Blog</a>
+          <a href="/#contact" style="text-decoration: none; background: #f55e57; color: #fff; padding: 8px 18px; border-radius: 10px; font-size: 14px; font-weight: 600;">
+            Demo gratis
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Article header -->
+    <section style="background: linear-gradient(135deg, #fff5f4 0%, #fcfbf2 60%, #fff 100%); padding: 56px 24px 40px;">
+      <div style="max-width: 760px; margin: 0 auto;">
+        <div style="margin-bottom: 20px;">
+          <a href="/blog" style="text-decoration: none; color: #6b7280; font-size: 14px; display: inline-flex; align-items: center; gap: 6px;">
+            ← Volver al blog
+          </a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+          <span style="background: #f55e57; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px;">
+            {post.category}
+          </span>
+          <span style="font-size: 13px; color: #9ca3af;">{formatDate(post.publishedAt)}</span>
+          <span style="color: #e8e6df;">·</span>
+          <span style="font-size: 13px; color: #9ca3af;">{post.readingTime} min de lectura</span>
+        </div>
+        <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #1b2637; margin: 0 0 20px; line-height: 1.2;">
+          {post.title}
+        </h1>
+        <p style="font-size: 18px; color: #6b7280; margin: 0; line-height: 1.65;">
+          {post.excerpt}
+        </p>
+      </div>
+    </section>
+
+    <!-- Article body + sidebar -->
+    <div style="max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start;">
+
+      <!-- Article content -->
+      <article>
+        <div set:html={postHtml} />
+
+        <!-- Tags at bottom -->
+        <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #e8e6df;">
+          <span style="font-size: 13px; color: #9ca3af; margin-right: 8px;">Categoría:</span>
+          <span style="background: #fff5f4; color: #f55e57; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px;">
+            {post.category}
+          </span>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside style="position: sticky; top: 80px;">
+        <!-- CTA card -->
+        <div style="background: linear-gradient(135deg, #1b2637 0%, #141c29 100%); border-radius: 20px; padding: 32px 28px; margin-bottom: 28px; color: #fff;">
+          <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 12px; color: #fff;">
+            ¿Tu restaurante ya tiene sistema de reservas?
+          </h3>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin: 0 0 24px; line-height: 1.6;">
+            Tabi automatiza reservas, reduce el no-show y te da analítica de tu operación. Demo gratis.
+          </p>
+          <a
+            href="/#contact"
+            style="display: block; background: #f55e57; color: #fff; text-align: center; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none;"
+          >
+            Solicitar demo gratis
+          </a>
+        </div>
+
+        <!-- Related posts -->
+        {relatedPosts.length > 0 && (
+          <div>
+            <h4 style="font-size: 14px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 16px;">
+              Más artículos
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              {relatedPosts.map((related) => (
+                <a
+                  href={`/blog/${related.slug}`}
+                  style="display: block; text-decoration: none; padding: 16px; background: #f9fafb; border-radius: 12px; border: 1px solid #e8e6df; transition: background 0.15s;"
+                  onmouseover="this.style.background='#fff5f4'"
+                  onmouseout="this.style.background='#f9fafb'"
+                >
+                  <span style="font-size: 11px; color: #f55e57; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">
+                    {related.category}
+                  </span>
+                  <p style="font-size: 14px; font-weight: 600; color: #1b2637; margin: 6px 0 0; line-height: 1.35;">
+                    {related.title}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </aside>
+    </div>
+
+    <!-- LinkedIn / Social ideas (hidden, for internal reference) -->
+    <!--
+    LinkedIn ideas:
+    {post.linkedinIdeas.map((idea) => `- ${idea}`).join('\n')}
+
+    Social ideas:
+    {post.socialIdeas.map((idea) => `- ${idea}`).join('\n')}
+    -->
+
+    <!-- Bottom CTA -->
+    <section style="background: linear-gradient(135deg, #f55e57 0%, #e04e48 100%); padding: 56px 24px;">
+      <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 26px; font-weight: 700; color: #fff; margin: 0 0 12px;">
+          Empieza a gestionar mejor tus reservas hoy
+        </h2>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.85); margin: 0 0 28px; line-height: 1.6;">
+          Tabi se configura en menos de una hora. Sin contratos largos. Sin costos de implementación.
+        </p>
+        <a
+          href="/#contact"
+          style="display: inline-block; background: #fff; color: #f55e57; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none;"
+        >
+          Quiero una demo gratis
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1b2637; color: #fff; padding: 40px 24px 24px;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; margin-bottom: 32px;">
+          <div>
+            <img src="/images/logo/tabi-imagotipo-dark.png" alt="Tabi" style="height: 28px; width: auto; margin-bottom: 12px;" />
+            <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin: 0;">{footer.tagline}</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start;">
+            <a href="/#how-it-works" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Cómo funciona</a>
+            <a href="/#pricing" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Precios</a>
+            <a href="/blog" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Blog</a>
+            <a href="/#contact" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">Contacto</a>
+            <a href={`mailto:${footer.email}`} style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none;">{footer.email}</a>
+          </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 12px; color: rgba(255,255,255,0.35); text-align: center;">
+          {footer.copyright}
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
