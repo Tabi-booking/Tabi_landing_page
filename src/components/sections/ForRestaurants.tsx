@@ -7,7 +7,7 @@ import { SectionContainer, SectionBody } from '../layout/SectionContainer';
 import { SectionHeader } from '../ui/SectionHeader';
 import { SectionPanel } from '../ui/SectionPanel';
 import { Button } from '../ui/Button';
-import { cn } from '../../lib/utils';
+import { cn, RESTAURANT_SIGNUP_URL } from '../../lib/utils';
 import { useMotionSafe } from '../../lib/motion';
 
 interface ForRestaurantsProps {
@@ -74,7 +74,7 @@ export function ForRestaurants({ content }: ForRestaurantsProps) {
                       </span>
                     ))}
                   </div>
-                  <Button href="#contact" variant="blue-outline" className="w-full sm:w-auto">
+                  <Button href={RESTAURANT_SIGNUP_URL} variant="blue-outline" className="w-full sm:w-auto">
                     {tool.cta}
                   </Button>
                 </motion.div>

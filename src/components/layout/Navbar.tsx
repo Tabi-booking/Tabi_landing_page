@@ -6,7 +6,7 @@ import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useActiveSection } from '../../hooks/useActiveSection';
-import { cn } from '../../lib/utils';
+import { cn, RESTAURANT_SIGNUP_URL } from '../../lib/utils';
 
 interface NavbarProps {
   locale: Locale;
@@ -87,7 +87,7 @@ export function Navbar({ locale, content }: NavbarProps) {
         <div className="flex shrink-0 items-center gap-2">
           <LanguageSwitcher locale={locale} overHero={overHero} />
           <Button
-            href={resolveHref('#contact')}
+            href={RESTAURANT_SIGNUP_URL}
             variant="ghost"
             size="sm"
             className={cn('hidden md:inline-flex', overHero && 'text-white/90 hover:bg-white/10')}
@@ -134,7 +134,7 @@ export function Navbar({ locale, content }: NavbarProps) {
               );
             })}
             <div className="mt-3 flex flex-col gap-2 border-t border-gray-100 pt-3">
-              <Button href={resolveHref('#contact')} variant="blue-outline" className="w-full">
+              <Button href={RESTAURANT_SIGNUP_URL} variant="blue-outline" className="w-full">
                 {content.ctaRestaurant}
               </Button>
               <Button href={resolveHref('#for-clients')} variant="gradient" className="w-full">

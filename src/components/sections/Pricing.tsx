@@ -6,7 +6,7 @@ import type { SiteContent } from '../../i18n/types';
 import { SectionContainer, SectionBody } from '../layout/SectionContainer';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Button } from '../ui/Button';
-import { cn } from '../../lib/utils';
+import { cn, RESTAURANT_SIGNUP_URL } from '../../lib/utils';
 import { useMotionSafe } from '../../lib/motion';
 
 interface PricingProps {
@@ -68,7 +68,7 @@ export function Pricing({ content }: PricingProps) {
                   </li>
                 ))}
               </ul>
-              <Button href="#contact" variant={plan.highlighted ? 'gradient' : 'blue-outline'} className="w-full" size="md">
+              <Button href={RESTAURANT_SIGNUP_URL} variant={plan.highlighted ? 'gradient' : 'blue-outline'} className="w-full" size="md">
                 {plan.cta}
               </Button>
             </motion.div>

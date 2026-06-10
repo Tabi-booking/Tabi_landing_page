@@ -1,4 +1,4 @@
-import { cn } from '../../lib/utils';
+import { cn, RESTAURANT_SIGNUP_URL } from '../../lib/utils';
 
 type ButtonVariant =
   | 'gradient'
@@ -109,7 +109,7 @@ export function AudienceButtons({
         {ctas.client}
       </Button>
       <Button
-        href="#contact"
+        href={RESTAURANT_SIGNUP_URL}
         variant={inverted ? 'hero-outline' : 'blue-outline'}
         size={size}
         className="flex-1 sm:flex-none"
