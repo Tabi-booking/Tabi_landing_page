@@ -7,7 +7,7 @@ import { SectionContainer, SectionBody } from '../layout/SectionContainer';
 import { SectionHeader } from '../ui/SectionHeader';
 import { SectionPanel } from '../ui/SectionPanel';
 import { Button } from '../ui/Button';
-import { cn, RESTAURANT_SIGNUP_URL } from '../../lib/utils';
+import { cn, RESTAURANT_LOGIN_URL, RESTAURANT_SIGNUP_URL } from '../../lib/utils';
 import { useMotionSafe } from '../../lib/motion';
 
 interface ForRestaurantsProps {
@@ -80,6 +80,15 @@ export function ForRestaurants({ content }: ForRestaurantsProps) {
                 </motion.div>
               )}
             </AnimatePresence>
+
+            <div className="relative mt-6 flex flex-col items-center justify-center gap-3 border-t border-gray-100 pt-6 sm:flex-row">
+              <Button href={RESTAURANT_SIGNUP_URL} variant="gradient" className="w-full sm:w-auto">
+                {content.ctaDemo}
+              </Button>
+              <Button href={RESTAURANT_LOGIN_URL} variant="blue-outline" className="w-full sm:w-auto">
+                {content.ctaExpert}
+              </Button>
+            </div>
           </SectionPanel>
         </motion.div>
       </SectionBody>

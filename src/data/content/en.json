@@ -32,7 +32,7 @@
       }
     ],
     "ctaClient": "Book",
-    "ctaRestaurant": "I'm a restaurant",
+    "ctaRestaurant": "Log in",
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
@@ -45,7 +45,7 @@
       "24/7"
     ],
     "ctaClient": "Book a table",
-    "ctaRestaurant": "I'm a restaurant",
+    "ctaRestaurant": "Register your restaurant",
     "stats": [
       {
         "value": "500+",
@@ -113,7 +113,7 @@
     ],
     "ctaPrompt": "",
     "ctaClient": "Book now",
-    "ctaRestaurant": "I'm a restaurant"
+    "ctaRestaurant": "Register your restaurant"
   },
   "forClients": {
     "label": "Diners",
@@ -190,7 +190,7 @@
           "Never miss a table",
           "WhatsApp"
         ],
-        "cta": "Free demo",
+        "cta": "Sign up",
         "metrics": [
           {
             "value": "45",
@@ -211,7 +211,7 @@
           "KPIs",
           "Reports"
         ],
-        "cta": "Free demo",
+        "cta": "Sign up",
         "metrics": [
           {
             "value": "45",
@@ -232,7 +232,7 @@
           "Fewer no-shows",
           "Cash flow"
         ],
-        "cta": "Free demo",
+        "cta": "Sign up",
         "metrics": [
           {
             "value": "45",
@@ -248,8 +248,8 @@
     "advantagesTitle": "",
     "advantages": [],
     "ctaTitle": "",
-    "ctaDemo": "Request demo",
-    "ctaExpert": "Talk to us",
+    "ctaDemo": "Sign up free",
+    "ctaExpert": "Log in",
     "footerNote": ""
   },
   "demo": {

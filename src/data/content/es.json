@@ -32,7 +32,7 @@
       }
     ],
     "ctaClient": "Reservar",
-    "ctaRestaurant": "Soy restaurante",
+    "ctaRestaurant": "Iniciar sesión",
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú"
   },
@@ -45,7 +45,7 @@
       "24/7"
     ],
     "ctaClient": "Reservar mesa",
-    "ctaRestaurant": "Soy restaurante",
+    "ctaRestaurant": "Registrar restaurante",
     "stats": [
       {
         "value": "500+",
@@ -113,7 +113,7 @@
     ],
     "ctaPrompt": "",
     "ctaClient": "Reservar ahora",
-    "ctaRestaurant": "Soy restaurante"
+    "ctaRestaurant": "Registrar restaurante"
   },
   "forClients": {
     "label": "Comensales",
@@ -190,7 +190,7 @@
           "Sin perder mesas",
           "WhatsApp"
         ],
-        "cta": "Demo gratis",
+        "cta": "Registrarse",
         "metrics": [
           {
             "value": "45",
@@ -211,7 +211,7 @@
           "KPIs",
           "Reportes"
         ],
-        "cta": "Demo gratis",
+        "cta": "Registrarse",
         "metrics": [
           {
             "value": "45",
@@ -232,7 +232,7 @@
           "Menos ausencias",
           "Flujo de caja"
         ],
-        "cta": "Demo gratis",
+        "cta": "Registrarse",
         "metrics": [
           {
             "value": "45",
@@ -248,8 +248,8 @@
     "advantagesTitle": "",
     "advantages": [],
     "ctaTitle": "",
-    "ctaDemo": "Solicitar demo",
-    "ctaExpert": "Hablar con alguien",
+    "ctaDemo": "Registrarse gratis",
+    "ctaExpert": "Iniciar sesión",
     "footerNote": ""
   },
   "demo": {
